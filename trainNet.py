@@ -11,8 +11,7 @@ from keras.backend import tensorflow_backend as K
 from keras import optimizers
 
 data = pickle.load( open('/nfs/fanae/user/sscruz/TTH/forDeepFlav/CMSSW_9_4_4/src/CMGTools/TTHAnalysis/macros/leptons/multiclass/vars.p','rb'))
-print data
-print kk 
+
 
 def getCompiledModelA():
     # optimal so far ( 0.980, 0.966)

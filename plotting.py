@@ -8,8 +8,8 @@ from keras.models import load_model
 from sklearn.metrics import roc_curve
 from sklearn.metrics import auc
 
-data = pickle.load( open('vars.p','rb'))
-data2 = pickle.load( open('vars_onlyLepMVA_toEval.p','rb'))
+data = pickle.load( open('/nfs/fanae/user/sscruz/TTH/forDeepFlav/CMSSW_9_4_4/src/CMGTools/TTHAnalysis/macros/leptons/multiclass/vars.p','rb'))
+data2 = pickle.load( open('/nfs/fanae/user/sscruz/TTH/forDeepFlav/CMSSW_9_4_4/src/CMGTools/TTHAnalysis/macros/leptons/multiclass/vars_onlyLepMVA_toEval.p','rb'))
 
 # fig, ax = plt.subplots()
 # plt.hist(data['train_x'])

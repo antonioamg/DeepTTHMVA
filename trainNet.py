@@ -39,8 +39,8 @@ def getCompiledModelB():
 for ch in 'E,M'.split(','):
 
     sums = np.sum(data['train_%s_y'%ch],axis=0)
-    print sums 
-    print kk 
+    print sums
+
 
     sig = sums[0] + sums[1]
     bkg = sums[2] + sums[3]

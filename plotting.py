@@ -34,9 +34,10 @@ for ch in 'E,M'.split(','):
     fpr_keras, tpr_keras, thresholds_keras = roc_curve(y<=1, classifier)
     auc_keras = auc(fpr_keras, tpr_keras)
 
+    area = np.trapz(tpr_old, fpr_old) # Area under DNN roc curve (trapezoidal integration)
     plt.plot([0, 1], [0, 1], 'k--')
     plt.plot(fpr_keras, tpr_keras, label='Keras (area = {:.3f})'.format(auc_keras))
-    plt.plot(fpr_old, tpr_old, label='Keras (area = ??)')
+    plt.plot(fpr_old, tpr_old, label='BDT (area = {:.3f})'.format(area))
     plt.xlabel('False positive rate')
     plt.ylabel('True positive rate')
     plt.title('ROC curve')

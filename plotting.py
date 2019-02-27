@@ -57,17 +57,20 @@ for ch in 'E,M'.split(','):
         class3 =  (together[together[:,1] == 2]) [:,0]
         class4 =  (together[together[:,1] == 3]) [:,0]
 
+	classglobal = np.concatenate((class1, class2, class3, class4)) #Solution to bins slightly shifted
+	xmax = max(classglobal)
+	xmin = min(classglobal)
+
         bins = 20
         plt.clf()
-        plt.hist(class1, bins, alpha=0.5,normed=True, label='Prompt')
-        plt.hist(class2, bins, alpha=0.5,normed=True, label='Prompt tau')
-        plt.hist(class3, bins, alpha=0.5,normed=True, label='Heavy fake')
-        plt.hist(class4, bins, alpha=0.5,normed=True, label='Light fake')
+        plt.hist(class1, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Prompt')
+        plt.hist(class2, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Prompt tau')
+        plt.hist(class3, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Heavy fake')
+        plt.hist(class4, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Light fake')
         plt.legend(loc='upper right')
         plt.show()
     
         plt.savefig('input_%s_%d.png'%(ch,var))
-
 
     for node in range(4):
         together = np.dstack( (prediction[:,node], y ) )[0]
@@ -76,13 +79,17 @@ for ch in 'E,M'.split(','):
         class2 =  (together[together[:,1] == 1]) [:,0]
         class3 =  (together[together[:,1] == 2]) [:,0]
         class4 =  (together[together[:,1] == 3]) [:,0]
+
+	classglobal = np.concatenate((class1, class2, class3, class4))
+	xmax = max(classglobal)
+	xmin = min(classglobal)
         
         bins = 20
         plt.clf()
-        plt.hist(class1, bins, alpha=0.5,normed=True, label='Prompt')
-        plt.hist(class2, bins, alpha=0.5,normed=True, label='Prompt tau')
-        plt.hist(class3, bins, alpha=0.5,normed=True, label='Heavy fake')
-        plt.hist(class4, bins, alpha=0.5,normed=True, label='Light fake')
+        plt.hist(class1, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Prompt')
+        plt.hist(class2, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Prompt tau')
+        plt.hist(class3, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Heavy fake')
+        plt.hist(class4, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Light fake')
         plt.legend(loc='upper right')
         plt.show()
 
@@ -93,12 +100,15 @@ for ch in 'E,M'.split(','):
     class2 =  (together[together[:,1] == 1]) [:,0]
     class3 =  (together[together[:,1] == 2]) [:,0]
     class4 =  (together[together[:,1] == 3]) [:,0]
+    classglobal = np.concatenate((class1, class2, class3, class4))
+    xmax = max(classglobal)
+    xmin = min(classglobal)
     bins = 20
     plt.clf()
-    plt.hist(class1, bins, alpha=0.5,normed=True, label='Prompt')
-    plt.hist(class2, bins, alpha=0.5,normed=True, label='Prompt tau')
-    plt.hist(class3, bins, alpha=0.5,normed=True, label='Heavy fake')
-    plt.hist(class4, bins, alpha=0.5,normed=True, label='Light fake')
+    plt.hist(class1, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Prompt')
+    plt.hist(class2, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Prompt tau')
+    plt.hist(class3, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Heavy fake')
+    plt.hist(class4, np.linspace(xmin, xmax, bins+1), alpha=0.5,normed=True, label='Light fake')
     plt.legend(loc='upper right')
     plt.show()
     
